@@ -47,6 +47,7 @@ const View = (props: Props) => {
         <title>
           /{props.project}/{props.page} - Scrapbox Reader
         </title>
+        <meta name="robots" content="noindex, nofollow" />
       </Head>
       generated at <time>{new Date(props.date).toLocaleString()}</time>
       <Page blocks={props.content} />
