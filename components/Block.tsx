@@ -7,6 +7,7 @@ import {
   Line as LineType,
 } from '@progfay/scrapbox-parser'
 import { Node } from './Node'
+import {highlight} from 'highlight.js'
 
 export const Block = (props: BlockType) => {
   switch (props.type) {
@@ -39,7 +40,7 @@ const CodeBlock = (props: CodeBlockType) => (
       <span className="code-block-start" title={props.fileName}>
         {props.fileName}
       </span>
-      <div style={{ marginLeft: '1.5em' }}>{props.content}</div>
+      <div style={{ marginLeft: '1.5em' }}>highlight(props.fileName.split('.').pop(),props.content)</div>
     </code>
   </BlockBase>
 )
